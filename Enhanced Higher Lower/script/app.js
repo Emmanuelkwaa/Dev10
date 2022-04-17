@@ -93,6 +93,7 @@ function inputConv(input){
     //check if numeber is not negative or 0
     if(input < 1){
         alert("Enter a number greater than 0")
+        document.getElementById("number").value = '';
         return;
     }
 
