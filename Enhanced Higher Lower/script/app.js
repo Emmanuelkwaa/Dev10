@@ -9,10 +9,13 @@ let informer;
 function getMaxNumber(){
     input = prompt("Please enter a maximum number", "Max number");
     maxNumber = inputConv(input);
+    while(isNaN(maxNumber)){
+        input = prompt("Please enter a maximum number", "Max number");
+        maxNumber = inputConv(input);
+    }
 
-    if(!isNaN(maxNumber)){
-        let instruction = document.querySelector('.instruction');
-        instruction.firstChild.nodeValue = `Guess a number between 1 and ${maxNumber}`;
+    let instruction = document.querySelector('.instruction');
+        instruction.innerHTML = `Guess a number between 1 and ${maxNumber}`;
         document.getElementById("number").value = '';
 
         //Generate a random number between 1 and max number, including max number
@@ -20,16 +23,8 @@ function getMaxNumber(){
         
         //Uncomment this to show the randdom number to be guessed
         console.log("Random number " + randomNumber);
-        
-        document.getElementById("button").remove();
-        let button = document.createElement('button');
-        let node = document.createTextNode('Guess');
-        button.appendChild(node);
-        button.setAttribute("id", "button")
-        document.querySelector('.container').appendChild(button);
-
+        45
         document.getElementById("button").addEventListener('click', checkGuessedNumber);
-    }
 }
 
 function checkGuessedNumber(){
