@@ -23,7 +23,6 @@ function getMaxNumber(){
         
         //Uncomment this to show the randdom number to be guessed
         console.log("Random number " + randomNumber);
-        45
         document.getElementById("button").addEventListener('click', checkGuessedNumber);
 }
 
