@@ -23,7 +23,6 @@ function getMaxNumber(){
         
         //Uncomment this to show the randdom number to be guessed
         console.log("Random number " + randomNumber);
-        45
         document.getElementById("button").addEventListener('click', checkGuessedNumber);
 }
 
@@ -93,6 +92,7 @@ function inputConv(input){
     //check if numeber is not negative or 0
     if(input < 1){
         alert("Enter a number greater than 0")
+        document.getElementById("number").value = '';
         return;
     }
 
